@@ -4,7 +4,7 @@ version '1.0-SNAPSHOT'
 buildscript {
     repositories {
         google()
-        mavenCentral()
+        jcenter()
     }
 
     dependencies {
@@ -15,14 +15,29 @@ buildscript {
 rootProject.allprojects {
     repositories {
         google()
-        mavenCentral()
+        jcenter()
     }
 }
 
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 30
+    namespace "flutter.plugins.contactsservice.contactsservice"
+    compileSdkVersion 34
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+//    kotlinOptions {
+//        jvmTarget = JavaVersion.VERSION_1_8
+//    }
+
+
+//    kotlinOptions {
+//        jvmTarget = '17'
+//    }
 
     defaultConfig {
         minSdkVersion 16
